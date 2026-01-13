@@ -113,18 +113,20 @@ export function ProductWork() {
     }, [activeIndex, goToProduct, visibleProducts.length])
 
     // Setup GSAP Observer for swipe detection
+    // Only capture horizontal swipes, allow vertical scrolling
     useEffect(() => {
         if (prefersReducedMotion) return
 
         const ctx = gsap.context(() => {
             Observer.create({
                 target: sectionRef.current,
-                type: "touch,pointer",
-                dragMinimum: 5,
+                type: "touch",
+                dragMinimum: 30, // Higher threshold to avoid accidental triggers
                 onLeft: () => goNext(),
                 onRight: () => goPrev(),
-                tolerance: 50,
-                preventDefault: true,
+                tolerance: 100,
+                lockAxis: true, // Lock to one axis to allow vertical scroll
+                preventDefault: false, // Allow default scroll behavior
             })
         }, sectionRef)
 
@@ -153,22 +155,22 @@ export function ProductWork() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 
             {/* Header */}
-            <div className="text-center mb-8 relative z-10">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+            <div className="text-center mb-6 sm:mb-8 relative z-10 px-2">
+                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl mb-2 sm:mb-4">
                     {productWork.title}
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                     {productWork.description}
                 </p>
             </div>
 
-            {/* Tab Bar */}
-            <div className="flex justify-center gap-2 mb-12 relative z-10">
+            {/* Tab Bar - Scrollable on mobile */}
+            <div className="flex justify-start sm:justify-center gap-2 mb-6 sm:mb-10 relative z-10 overflow-x-auto pb-2 px-2 -mx-2">
                 {visibleProducts.map((product, index) => (
                     <button
                         key={product.id}
                         onClick={() => goToProduct(index)}
-                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                        className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap touch-manipulation ${
                             index === activeIndex
                                 ? "bg-primary text-primary-foreground shadow-lg scale-105"
                                 : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
@@ -182,9 +184,10 @@ export function ProductWork() {
             {/* Cards Container */}
             <div
                 ref={cardsContainerRef}
-                className="relative flex-1 flex items-center justify-center min-h-[500px]"
+                className="relative flex-1 flex items-start sm:items-center justify-center min-h-[400px] sm:min-h-[500px]"
                 style={{ transformStyle: "preserve-3d" }}
             >
+
                 {visibleProducts.map((product, index) => (
                     <div
                         key={product.id}
@@ -206,22 +209,22 @@ export function ProductWork() {
             </div>
 
             {/* Navigation Arrows */}
-            <div className="flex justify-center gap-4 mt-8 relative z-10">
+            <div className="flex justify-center gap-4 mt-6 sm:mt-8 relative z-10">
                 <button
                     onClick={goPrev}
                     disabled={isAnimating}
-                    className="p-3 rounded-full bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors disabled:opacity-50"
+                    className="p-2.5 sm:p-3 rounded-full bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors disabled:opacity-50 touch-manipulation"
                     aria-label="Previous product"
                 >
-                    <ChevronLeft className="h-5 w-5" />
+                    <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5" />
                 </button>
                 <button
                     onClick={goNext}
                     disabled={isAnimating}
-                    className="p-3 rounded-full bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors disabled:opacity-50"
+                    className="p-2.5 sm:p-3 rounded-full bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors disabled:opacity-50 touch-manipulation"
                     aria-label="Next product"
                 >
-                    <ChevronRight className="h-5 w-5" />
+                    <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5" />
                 </button>
             </div>
 

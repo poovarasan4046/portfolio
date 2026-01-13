@@ -48,7 +48,7 @@ export const content = {
   },
 
   techStack: {
-    title: "Technology Stack",
+    title: "Technologies I Use",
     categories: [
       {
         name: "Frontend",

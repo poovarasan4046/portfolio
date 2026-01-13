@@ -163,7 +163,7 @@ export const productWork: ProductWorkContent = {
 
       techStack: {
         frontend: ["Expo", "React Native"],
-        backend: ["None (Fully client-side)"],
+        backend: ["Client-side only (no backend)"],
         database: ["Expo SQLite (Local)", "Google Drive App Folder (Backup)"],
         tooling: ["EAS Build", "CI/CD"],
       },
