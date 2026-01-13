@@ -1,0 +1,94 @@
+Personal Website – Section-by-Section Plan
+1️⃣ Hero Section (Above the fold)
+Purpose: Instant clarity, no noise.
+Content
+Title: Full-Stack Engineer
+One-line description:
+Building well-structured, production-ready software across web and mobile platforms.
+Primary CTA:
+“View Work”
+Secondary CTA:
+“Get in Touch”
+Keep it minimal.
+No long paragraphs here.
+2️⃣ About / Philosophy
+Purpose: Show how you think, not your resume.
+Content Short paragraph (4–5 lines):
+Your approach to software
+Ownership mindset
+End-to-end responsibility
+Calm, confident tone
+Example direction:
+I build software with a focus on structure, clarity, and long-term maintainability. I’m comfortable taking products from early planning through production deployment and iteration, and I enjoy working close to real-world constraints.
+3️⃣ What I Do
+Purpose: Clear scope of work (clients & collaborators).
+Split into 3 cards:
+Web Applications
+Production web apps
+Dashboards, platforms, tools
+Mobile Applications
+Cross-platform apps
+Play Store-ready builds
+Backend & Systems
+APIs & services
+Architecture & performance
+No tech list yet — just capabilities.
+4️⃣ Selected Work / Projects
+Purpose: Proof of building.
+For each project:
+App name
+One-line purpose
+Your role (Idea → Build → Deploy)
+Status (Live / Maintained / Experimental)
+Example structure:
+Expense Tracker
+Personal finance app focused on simplicity and offline-first usage.
+Crypto Catcher
+Experimental product exploring crypto-focused workflows and UX.
+Avoid over-explaining. Let it breathe.
+5️⃣ Process (How You Work)
+Purpose: Show maturity and trust.
+4 short steps:
+Understanding the problem
+Planning & architecture
+Building & shipping
+Iteration & maintenance
+This section quietly sells your professionalism.
+6️⃣ Technology Stack
+Purpose: Technical clarity without flexing.
+Group, not list everything:
+Frontend: React, Next.js, React Native
+Backend: Node.js, Fastify, Elysia
+Delivery: Git, CI/CD, Cloud Deployment
+Exploring: Rust, Tauri
+This reassures technical visitors.
+7️⃣ Independent & Freelance Work
+Purpose: Entrepreneurial signal.
+Short paragraph:
+Alongside professional work, I take on independent and freelance projects, helping turn ideas into stable, production-ready applications.
+No pricing. No sales talk.
+8️⃣ Writing / Notes (Optional but powerful)
+Purpose: Authority & thinking.
+Ideas:
+Engineering decisions
+Lessons from shipping apps
+Performance & architecture notes
+Even 2–3 posts is enough.
+9️⃣ Contact
+Purpose: Simple and direct.
+Email
+LinkedIn
+GitHub
+Line to use:
+Open to collaboration, freelance work, and interesting product ideas.
+🔟 Footer
+Name
+Role
+Year
+Minimal links
+Overall Tone Rules
+Calm
+Confident
+Minimal
+No buzzwords
+No “passionate”, “rockstar”, “expert”
