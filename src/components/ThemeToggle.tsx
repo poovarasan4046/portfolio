@@ -25,7 +25,6 @@ export function ThemeToggle({ className }: { className?: string }) {
     const newTheme = resolvedTheme === "dark" ? "light" : "dark"
 
     // Check if View Transitions API is supported
-    // @ts-expect-error - View Transitions API is experimental
     if (!document.startViewTransition) {
       setTheme(newTheme)
       return
@@ -42,7 +41,6 @@ export function ThemeToggle({ className }: { className?: string }) {
     )
 
     // Start the view transition
-    // @ts-expect-error - View Transitions API is experimental
     const transition = document.startViewTransition(() => {
       setTheme(newTheme)
     })

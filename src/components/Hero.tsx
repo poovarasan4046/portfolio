@@ -145,7 +145,7 @@ export function Hero() {
 
       <div ref={ctaRef} className="mt-8 flex gap-4 md:mt-10">
         <a
-          href="#projects"
+          href="#products"
           className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-base font-medium text-primary-foreground shadow transition-transform hover:scale-105 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
         >
           {content.hero.ctaPrimary}
