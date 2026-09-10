@@ -63,9 +63,20 @@ export function ProductCard({ product, isActive, prefersReducedMotion }: Product
                     <div className="p-5 sm:p-6 md:p-8 border-b md:border-b-0 md:border-r border-border/30">
                         {/* Header */}
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
-                            <div>
-                                <h3 className="text-xl sm:text-2xl font-bold tracking-tight">{product.title}</h3>
-                                <p className="text-xs sm:text-sm text-muted-foreground mt-1">{product.ownership.role}</p>
+                            <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                                {product.logo && (
+                                    <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border/60 bg-background p-1.5 shadow-sm">
+                                        <img
+                                            src={product.logo}
+                                            alt={`${product.title} logo`}
+                                            className="h-full w-full object-contain"
+                                        />
+                                    </div>
+                                )}
+                                <div className="min-w-0">
+                                    <h3 className="text-xl sm:text-2xl font-bold tracking-tight">{product.title}</h3>
+                                    <p className="text-xs sm:text-sm text-muted-foreground mt-1">{product.ownership.role}</p>
+                                </div>
                             </div>
                             <span className={`self-start px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-medium capitalize border whitespace-nowrap ${getStatusColor(product.lifecycle.currentStatus)}`}>
                                 {formatStatus(product.lifecycle.currentStatus)}
@@ -156,7 +167,7 @@ export function ProductCard({ product, isActive, prefersReducedMotion }: Product
                                 {product.lifecycle.stages.map((stage) => (
                                     <div key={stage.key} className="flex items-center gap-3 sm:gap-4 relative">
                                         {/* Icon */}
-                                        <div className={`relative z-10 flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${
+                                        <div className={`relative z-10 shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${
                                             stage.completed 
                                                 ? 'bg-primary text-primary-foreground' 
                                                 : 'bg-muted text-muted-foreground/40 border border-border'

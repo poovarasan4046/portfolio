@@ -117,6 +117,8 @@ export interface ProductItem {
   id: string;
   /** Product title displayed as heading */
   title: string;
+  /** Optional logo or product mark shown in the card */
+  logo?: string;
   /** Brief description of the product */
   summary: string;
   /** Ownership and role information */
@@ -152,8 +154,9 @@ export const productWork: ProductWorkContent = {
     {
       id: "spendsync",
       title: "Spend Sync",
+      logo: "/spendsync_logo.svg",
       summary:
-        "An Android-first personal finance app designed to reduce friction in expense tracking, with offline-first storage using local SQLite and automatic backup to the app's private Google Drive folder.",
+        "Spend Sync is a live Android-first personal finance app that keeps expense tracking quick and reliable with offline-first local SQLite storage and automatic backup to the app's private Google Drive folder. It is available on the Play Store and has surpassed 1,270 downloads.",
 
       ownership: {
         type: "personal",
@@ -169,17 +172,17 @@ export const productWork: ProductWorkContent = {
       },
 
       lifecycle: {
-        currentStatus: "internal-testing",
+        currentStatus: "live",
         stages: [
           { key: "idea", label: "Idea & Problem Discovery", completed: true },
           { key: "planning", label: "Planning & Architecture", completed: true },
           { key: "development", label: "Development", completed: true },
-          { key: "testing", label: "Internal Testing (Play Store)", completed: true },
-          { key: "deployment", label: "Public Play Store Release", completed: false },
-          { key: "production", label: "Live in Production", completed: false },
+          { key: "testing", label: "Internal Testing", completed: true },
+          { key: "deployment", label: "Play Store Release", completed: true },
+          { key: "production", label: "Live in Production", completed: true },
         ],
         startedAt: "2024-06",
-        lastUpdated: "2025-01",
+        lastUpdated: "2026-09",
       },
 
       visibility: {
@@ -189,7 +192,7 @@ export const productWork: ProductWorkContent = {
 
       links: {
         website: "https://spendsync.poovarasan.me",
-        playStore: null, // Internal testing only
+        playStore: "https://play.google.com/store/apps/details?id=com.flowerindustries.spendsync&pcampaignid=web_share",
         github: null,
       },
     },

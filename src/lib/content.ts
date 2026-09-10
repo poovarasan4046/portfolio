@@ -1,8 +1,8 @@
 export const content = {
   hero: {
-    greeting: "I'm",
+    greeting: "Hey, I'm",
     name: "Poovarasan",
-    role: "Full Stack Engineer",
+    role: "Full Stack Developer",
     description:
       "Building structured, production-ready software for web and mobile platforms.",
     ctaPrimary: "View Products",

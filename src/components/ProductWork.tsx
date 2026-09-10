@@ -147,7 +147,7 @@ export function ProductWork() {
     return (
         <section
             ref={sectionRef}
-            id="products"
+            id="projects"
             className="relative min-h-screen flex flex-col justify-center px-4 md:px-8 overflow-hidden"
             style={{ perspective: "1500px" }}
         >
@@ -170,11 +170,10 @@ export function ProductWork() {
                     <button
                         key={product.id}
                         onClick={() => goToProduct(index)}
-                        className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap touch-manipulation ${
-                            index === activeIndex
+                        className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 whitespace-nowrap touch-manipulation ${index === activeIndex
                                 ? "bg-primary text-primary-foreground shadow-lg scale-105"
                                 : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
-                        }`}
+                            }`}
                     >
                         {product.title}
                     </button>
@@ -234,11 +233,10 @@ export function ProductWork() {
                     <button
                         key={index}
                         onClick={() => goToProduct(index)}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                            index === activeIndex
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeIndex
                                 ? "bg-primary w-6"
                                 : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
-                        }`}
+                            }`}
                         aria-label={`Go to product ${index + 1}`}
                     />
                 ))}
